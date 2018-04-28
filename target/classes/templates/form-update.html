@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style type="text/css">
+    .bs-example{
+    	margin: 20px;
+    }
+	/* Fix alignment issue of label on extra small devices in Bootstrap 3.2 */
+    .form-horizontal .control-label{
+        padding-top: 7px;
+    }
+</style>
+<title th:text="${title}"></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	
+	<div   th:replace = "fragments/fragment :: header" ></div> 
+	
+	<center><h1 class="page-header">Update Student</h1></center>
+	<div class="container">
+	<form action="/student/update/submit" method="POST" th:object="${student}">
+		<div class="form-group">
+			<label for="npm">NPM</label> 
+			
+			<input class="form-control" type="text" name="npm" readonly="true" th:field="*{npm}" th:value="${student.npm}"/>
+			
+		</div>
+		<div class="form-group">
+			<label for="name" >Name</label>
+			
+			<input class="form-control" type="text" name="name" th:field="*{name}" th:value="${student.name}"/>
+			
+		</div>
+		<div class="form-group">
+			<label for="gpa">GPA</label>
+			
+			<input class="form-control" type="text" name="gpa" th:field="*{gpa}" th:value="${student.gpa}"/>
+			
+		</div>
+
+		<div class="col-7">
+			<button class="btn btn-success" type="submit" name="action" value="save">Save</button>
+		</div>
+	</form>
+	</div>
+	<div   th:replace = "fragments/fragment :: footer" ></div> 
+</body>
+
+</html>
+

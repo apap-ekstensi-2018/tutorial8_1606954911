@@ -1,0 +1,6 @@
+com/example/service/StudentService.class
+com/example/ApapTutorial04Application.class
+com/example/controller/StudentController.class
+com/example/dao/StudentMapper.class
+com/example/service/StudentServiceDatabase.class
+com/example/model/StudentModel.class
